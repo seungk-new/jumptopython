@@ -2,22 +2,10 @@ import sys
 sys.stdin = open("2070_input.txt", "r")
 T = int(input())
 for test_case in range(1, T + 1):
-    a, b = map(int, input().split()) 
+    a, b = map(int, input().split())
     if a > b:
         print(f'#{test_case} >')
-    elif a < b:  
-        print(f'#{test_case} <')
-    else: 
+    if a == b:
         print(f'#{test_case} =')
-        
-# for test_case in range(1, T + 1):
-#     a, b = map(int, input().split()) 
-#     result = ''
-#     if a > b:
-#         result = '>'
-#     elif a < b:
-#         result = '<'
-#     else:
-#         result = '='
-
-#     print(f'#{test_case} {result}')       
+    if a < b:
+        print(f'#{test_case} <')
