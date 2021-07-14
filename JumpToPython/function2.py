@@ -30,5 +30,42 @@ def add_mul(choice, *args):
 result = add_mul("add", 1, 2, 3)
 print(result)
 
-result = add_mul("mul", 1, 2, 3, 5)
+result = add_mul("mul", 1, 2, 3)
+print()
+#키워드 파라미터 kwargs, 키워드 파라미터를 사용할 때는 매개변수 앞에 **를 붙인다.
+def kwargs(**kwargs):
+    print(kwargs)
+kwargs(a=1)
+kwargs(name = "foo", age=3)
+#**kwargs처럼 매개변수 이름 앞에 **을 붙이면 매개변수
+#kwargs는 딕셔너리가 되고 모든 key=value 형태의 결괏값이 그 딕셔너리에 저장된다.
+
+#함수의 결괏값은 언제나 하나이다.
+def add_and_mul(a, b):
+    return a+b, a*b
+result = add_and_mul(2, 3)
 print(result)
+#함수의 결괏값은 언제나 하나이다.(a+b, a*b)튜플 형식으로 돌려준다.
+#매개변수에 초깃값 미리 설정하기
+# return의 또 다른 쓰임새
+#특별한 상황일 때 함수를 빠져나가고 싶다면 return을 단독으로 써서 함수를
+#즉시 빠져나갈 수 있다.
+
+def rainbow(color):
+    if color == "연두색":
+        return
+    print("무지개에 있는 색은 %s입니다" %color)
+rainbow('검정색')
+rainbow("연두색")#이 때는 빠져나가짐.
+rainbow("빨간색")
+
+#매개변수에 초깃값 미리 설정하기.
+def say_myself(name, old, man=True):
+    print("나의 이름은 %s입니다." %name)
+    print("나이는 %d살입니다." %old)
+    if man:
+        print("남자입니다")
+    else:
+        print("여자입니다")
+say_myself("vic", 29)
+# 초기화 시키고 싶은 변수를 항상 맨 뒤에 놓아야함.man = True와 같은 것.
